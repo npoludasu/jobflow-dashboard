@@ -3,7 +3,7 @@ import { SideBarMenuItem } from "./SideBarMenuItem";
 import { RiLogoutCircleRFill, RiSettings5Fill } from "react-icons/ri";
 import { BsLayoutSidebarInset } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-import LogoutModal from "../LogOutModal";
+import LogoutModal from "../LogoutModal";
 
 const SideBar = () => {
   const menuItems = SideBarMenuItem();
