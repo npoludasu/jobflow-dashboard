@@ -15,6 +15,7 @@ const Applications = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [checkedJobs, setCheckedJobs] = useState([]);
   const [isCardView, setIsCardView] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     localStorage.setItem("jobs", JSON.stringify(jobs));
@@ -25,7 +26,7 @@ const Applications = () => {
   };
 
   const handleAddJob = (newJob) => {
-    const jobWithId = { ...newJob, id: Date.now() }; 
+    const jobWithId = { ...newJob, id: Date.now() };
     setJobs([...jobs, jobWithId]);
   };
 
@@ -89,6 +90,8 @@ const Applications = () => {
             type="search"
             name="search"
             placeholder="search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-24 outline-none bg-white"
           />
         </form>
@@ -126,6 +129,13 @@ const Applications = () => {
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mb-12">
           {jobs
             .filter((job) => activeTab === "all" || job.status === activeTab)
+            .filter(
+              (job) =>
+                job.jobTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                job.companyName
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase()),
+            )
             .map((job) => (
               <div
                 key={job.id}
