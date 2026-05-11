@@ -106,7 +106,10 @@ const Dashboard = () => {
         <h1 className="font-bold text-[#2A2A2A] text-xl lg:text-2xl">
           {getGreeting()} {userName || "User"},
         </h1>
-        <div className="gap-2 items-center border-l-2 border-[#5D6661] pl-4 hidden lg:flex">
+        <div className="gap-3 items-center border-l-2 border-[#5D6661] pl-4 hidden lg:flex">
+          <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center font-semibold">
+            {userName?.charAt(0)?.toUpperCase() || "U"}
+          </div>
           <div>
             <p className="text-[12px]">{userName}</p>
             <p className="text-[12px]">{userEmail}</p>
