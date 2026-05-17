@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SideBarMenuItem } from "./SideBarMenuItem";
-import { RiLogoutCircleRFill, RiSettings5Fill } from "react-icons/ri";
+import { RiLogoutBoxRLine, RiSettings5Fill } from "react-icons/ri";
 import { BsLayoutSidebarInset } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import LogoutModal from "../LogoutModal";
@@ -69,7 +69,7 @@ const SideBar = () => {
       >
         <div className="rounded-[20px] overflow-y-auto px-4 bg-[#19211D] text-white h-full">
           <div className="flex items-center justify-between pl-6">
-            <p className="">Job Tracker</p>
+            <p className="text-xl font-bold">Job Tracker</p>
             <button
               className="text-xl lg:hidden"
               title="Minimize Sidebar"
@@ -117,7 +117,7 @@ const SideBar = () => {
                 }}
               >
                 <span className="text-xl">
-                  <RiLogoutCircleRFill />
+                  <RiLogoutBoxRLine  />
                 </span>
                 <div className="text-sm">Logout</div>
               </div>
