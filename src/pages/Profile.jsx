@@ -313,7 +313,9 @@ const Profile = () => {
           {jobPreferences.map((pref, index) => (
             <span
               key={index}
-              className="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+              // className="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+              className="bg-black text-white px-3 py-1 rounded-full text-sm flex items-center gap-2"
+
             >
               {pref}
               {editingJobPreferences && (
