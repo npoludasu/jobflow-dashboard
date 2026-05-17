@@ -69,7 +69,7 @@ const Dashboard = () => {
     {
       title: "Interview preparation guide",
       viewUrl:
-        "https://www.geeksforgeeks.org/interview-preparation-for-software-developers/",
+        "https://www.geeksforgeeks.org/interview-prep/interview-corner/",
     },
     {
       title: "Job search strategies",
@@ -79,7 +79,7 @@ const Dashboard = () => {
     {
       title: "Networking tips",
       viewUrl:
-        "https://www.linkedin.com/business/talent/blog/talent-strategy/networking-tips",
+        "https://in.indeed.com/career-advice/career-development/business-networking-tips",
     },
     {
       title: "Career development plan",
@@ -152,7 +152,7 @@ const Dashboard = () => {
         {/* CHART */}
         <div className="lg:col-span-2 p-4 relative">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg">Applications Tracking</h3>
+            <h3 className="text-lg font-bold">Applications Tracking</h3>
 
             <span
               onClick={() => setMenuOpen(!menuOpen)}
@@ -212,7 +212,8 @@ const Dashboard = () => {
                 key={index}
                 className="flex items-center justify-between py-2 border-l-4 pl-3 pr-2 rounded shadow-sm"
               >
-                <p>{resource.title}</p>
+                {/* <p>{resource.title}</p> */}
+                <a href={resource.viewUrl} target="_blank">{resource.title}</a>
                 <a href={resource.viewUrl} target="_blank">
                   <FaLongArrowAltRight />
                 </a>
